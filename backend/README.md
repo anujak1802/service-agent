@@ -9,7 +9,7 @@ It provides RESTful APIs to manage complaints using **Node.js, Express, and Post
 
 - Submit a new complaint
 - Fetch all complaints
-- Toggle complaint status (**Pending ↔ Resolved**)
+- Toggle complaint status (**Pending ↔️ Resolved**)
 - Delete a complaint (optional)
 - Persists data in PostgreSQL (local DB or Supabase)
 
@@ -40,7 +40,6 @@ backend/
 ```
 cd backend
 npm install
-npx nodemon server.js
 ```
 ### 2️⃣ Environment variables
 Create a .env file in /backend with your DB connection string:
@@ -63,11 +62,13 @@ Example:
 ### 3️⃣ Database Schema
 This project uses a complaints table with an ENUM for status:
 
-sql
+(if things don't work then run script manually in postgres)
 
-```CREATE TYPE complaint_status AS ENUM ('Pending', 'Resolved');```
 
 ```
+CREATE TYPE complaint_status AS ENUM ('Pending', 'Resolved');
+
+
 CREATE TABLE IF NOT EXISTS complaints (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   name text NOT NULL,
@@ -83,7 +84,7 @@ CREATE TABLE IF NOT EXISTS complaints (
 For development (with auto-restart via nodemon):
 
 
-```npm run dev```
+```npx nodemon server.js```
 
 
 Server runs at 👉 http://localhost:4000
@@ -132,7 +133,7 @@ Response:
 ]
 ```
 3. PATCH /complaints/:id
-Toggle a complaint’s status (Pending ↔ Resolved).
+Toggle a complaint’s status (Pending ↔️ Resolved).
 
 Request body:
 

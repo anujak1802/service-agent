@@ -19,7 +19,7 @@ ServiceAgent/
 ---
 ## 🚀 Getting Started
 
-Clone the repository:
+Clone the repository: (Note : Node version v22+)
 
 ```bash
 git clone https://github.com/anujak1802/service-agent.git
@@ -28,12 +28,11 @@ git clone https://github.com/anujak1802/service-agent.git
 cd service-agent
 ```
 ### 1️⃣ Backend Setup
-See Backend README for API setup, database schema, and environment configuration.
+See [Backend README](./backend/README.md) for API setup, database schema, and environment configuration.
 
 ```
 cd backend
 npm install
-npx nodemon server.js
 ```
 By default, backend runs at:
 👉 http://localhost:4000
@@ -59,7 +58,7 @@ Client-side form validation.
 ### 👨‍💻 Admin
 1. View all complaints.
 
-2. Toggle complaint status (Pending ↔ Resolved).
+2. Toggle complaint status (Pending ↔️ Resolved).
 
 3. Delete complaint (optional).
 
